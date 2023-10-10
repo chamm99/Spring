@@ -14,12 +14,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MemoryMemberRepositoryTest {
     MemberService memberService;
-    MemoryMemberRepository memberRepository;
+    MemoryMemberRepository repository = new MemoryMemberRepository();
 
     @AfterEach
     public void beforeEach() {
-        memberRepository = new MemoryMemberRepository();
-        memberService = new MemberService(memberRepository);
+        repository.clearStore();
     }
 
     @Test
