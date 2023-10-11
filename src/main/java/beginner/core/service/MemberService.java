@@ -2,6 +2,7 @@ package beginner.core.service;
 
 import beginner.core.domain.Member;
 import beginner.core.repository.MemberRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+@Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
 
