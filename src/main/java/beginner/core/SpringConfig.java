@@ -1,5 +1,6 @@
 package beginner.core;
 
+import beginner.core.aop.TimeTraceAop;
 import beginner.core.repository.*;
 import beginner.core.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,10 @@ public class SpringConfig {
     @Autowired
     public SpringConfig(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
+    }
+    @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
     }
 
 //    private EntityManager em;
